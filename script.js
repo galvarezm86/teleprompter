@@ -1829,20 +1829,19 @@ document.addEventListener(
 
         if (!document.fullscreenElement) {
 
-            modoTeleprompter.style.display = "none";
-        
-            modoEdicion.classList.remove("oculto");
-        
-            pausar();
-        
-            if (temporizadorCuentaRegresiva) {
-        
-                clearInterval(
-                    temporizadorCuentaRegresiva
-                );
-        
-                temporizadorCuentaRegresiva = null;
-        
+                modoTeleprompter.style.display = "none";
+            
+                modoEdicion.classList.remove("oculto");
+            
+                pausar();
+            
+                reiniciarProgreso();
+            
+                enCuentaRegresiva = false;
+            
+                botonAnterior.disabled = false;
+                botonSiguiente.disabled = false;
+            
             }
         
             enCuentaRegresiva = false;
