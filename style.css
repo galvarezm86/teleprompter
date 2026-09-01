@@ -220,6 +220,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .bloqueEditor {
