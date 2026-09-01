@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Teleprompter</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="dialogo" class="dialogoOculto">
+
+    <div class="contenidoDialogo">
+
+        <h3 id="tituloDialogo"></h3>
+
+        <p id="mensajeDialogo"></p>
+
+        <div class="botonesDialogo">
+
+            <button id="cancelarDialogo">
+                Cancelar
+            </button>
+
+            <button id="confirmarDialogo">
+                Confirmar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="modoEdicion">
+    <h1>Teleprompter</h1>
+    
+    <div class="panel-control">
+
+        <!-- APARIENCIA -->
+        <div class="control colores">
+    
+            <div class="selectorTemas">
+    
+                <span class="etiquetaTema">
+                    Apariencia:
+                </span>
+    
+                <button
+                    class="temaColor activo"
+                    data-tema="Noche"
+                    data-fondo="#111111"
+                    data-texto="#FFFFFF"
+                    title="Noche">
+                </button>
+    
+                <button
+                    class="temaColor"
+                    data-tema="Azul"
+                    data-fondo="#0D2B45"
+                    data-texto="#FFFFFF"
+                    title="Azul">
+                </button>
+    
+                <button
+                    class="temaColor"
+                    data-tema="Café"
+                    data-fondo="#3B2F2F"
+                    data-texto="#FFF8E7"
+                    title="Café">
+                </button>
+    
+                <button
+                    class="temaColor"
+                    data-tema="Papel"
+                    data-fondo="#F5F1E8"
+                    data-texto="#222222"
+                    title="Papel">
+                </button>
+    
+                <button
+                    class="temaColor"
+                    data-tema="Azul claro"
+                    data-fondo="#DCEEFF"
+                    data-texto="#102A43"
+                    title="Azul claro">
+                </button>
+    
+                <button
+                    class="temaColor"
+                    data-tema="Verde"
+                    data-fondo="#173B35"
+                    data-texto="#F1FFF8"
+                    title="Verde">
+                </button>
+    
+            </div>
+    
+        </div>
+    
+    
+        <!-- VELOCIDAD -->
+        <div class="control">
+    
+            <label for="velocidad">
+                Velocidad:
+                <span id="valorVelocidad">2,0</span>
+                palabras/segundo
+            </label>
+    
+            <input
+                type="range"
+                id="velocidad"
+                min="1"
+                max="4"
+                step="0.1"
+                value="2">
+    
+        </div>
+    
+    
+        <!-- CUENTA REGRESIVA -->
+        <div class="control">
+    
+            <label for="cuentaRegresiva">
+                Cuenta regresiva
+            </label>
+    
+            <select id="cuentaRegresiva">
+    
+                <option value="0">
+                    Sin cuenta regresiva
+                </option>
+    
+                <option value="3">
+                    3 segundos
+                </option>
+    
+                <option value="5" selected>
+                    5 segundos
+                </option>
+    
+                <option value="10">
+                    10 segundos
+                </option>
+    
+            </select>
+    
+        </div>
+    
+    
+        <!-- PANTALLA COMPLETA -->
+        <div class="control">
+    
+            <button
+                id="fullscreen"
+                class="botonAccion botonFullscreen">
+                🎬 Iniciar en pantalla completa
+            </button>
+    
+        </div>
+    
+    </div>
+    
+    <h2>Editor de bloques</h2>
+    
+    <div class="accionesDocumento">
+
+        <label
+            for="archivoWord"
+            class="botonAccion botonWord">
+            📄 Cargar documento Word
+        </label>
+    
+        <input
+            type="file"
+            id="archivoWord"
+            accept=".docx"
+            hidden
+        >
+    
+        <button
+            id="guardarDocumento"
+            class="botonAccion botonGuardar"
+            title="Guardar documento Word">
+            💾 Guardar documento Word
+        </button>
+    
+        <button
+            id="vaciarDocumento"
+            class="botonAccion botonVaciar"
+            title="Eliminar todos los bloques">
+            🗑 Eliminar todos los bloques
+        </button>
+
+    </div>
+    
+    <div id="resumenGeneral">
+        1 bloque · 0 palabras · Duración estimada: 0:00
+    </div>
+
+    <div id="avisoDeshacer"></div>
+
+    <br>
+  
+    <div id="listaBloques"></div>
+
+</div>
+  
+<div id="modoTeleprompter">
+    <div class="botones">
+
+        <button id="anterior">
+            ◀ Anterior
+        </button>
+
+        <button id="playPause">
+            ▶ Iniciar
+        </button>
+
+        <button id="siguiente">
+            Siguiente ▶
+        </button>
+
+        
+
+    </div>
+  
+    <p id="estado">
+        Bloque 1 de 12
+    </p>
+  
+    <div id="teleprompter">
+
+        <div id="bloqueAnterior"></div>
+    
+        <div id="bloqueActual"></div>
+    
+        <div id="bloqueSiguiente"></div>
+    
+    </div>
+    
+    <div id="progresoBloque">
+    
+        <div id="barraProgreso"></div>
+    
+    </div>
+    
+    <div id="tiempoBloque">
+        0.0 / 0.0 segundos
+    </div>
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+
+</html>
