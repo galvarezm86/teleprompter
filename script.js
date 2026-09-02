@@ -1829,34 +1829,26 @@ document.addEventListener(
 
         if (!document.fullscreenElement) {
 
-                modoTeleprompter.style.display = "none";
-            
-                modoEdicion.classList.remove("oculto");
-            
-                pausar();
-            
-                reiniciarProgreso();
-            
-                enCuentaRegresiva = false;
-            
-                botonAnterior.disabled = false;
-                botonSiguiente.disabled = false;
-            
-            }
-        
+            modoTeleprompter.style.display = "none";
+
+            modoEdicion.classList.remove("oculto");
+
+            pausar();
+
+            reiniciarProgreso();
+
             enCuentaRegresiva = false;
             cuentaRegresivaPausada = false;
             segundosCuentaRegresiva = 0;
             callbackCuentaRegresiva = null;
-        
+
             botonAnterior.disabled = false;
             botonSiguiente.disabled = false;
-        
+
             actualizarBotonPlayPause();
 
             cancelarDivision();
             mostrarEditor();
-        
         }
     }
 );
